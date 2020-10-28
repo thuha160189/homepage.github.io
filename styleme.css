@@ -1,0 +1,60 @@
+body{
+	background-color: white;
+}
+p {
+	font-family: sans-serif;
+	color: purple;
+	
+
+}
+p:first-letter {
+	font-family: "Source Sans Pro", Arial;
+	color: purple;
+	float: left;
+	font-size: 2rem;
+	line-height: 0.65;
+	margin: 0.1em 0.1em 0.2em 0;
+	
+
+}
+
+em {
+	color: blue;
+}
+a {
+	color: red;
+	text-decoration: none;
+	
+}
+a:hover {
+	color: red;
+	text-decoration: underline;
+	
+}
+
+h1,h2 {
+	font-family: Verdana;
+	color: green;
+}
+.happy {
+	height: 300px;
+	width: 300px;
+}
+
+.sad{
+	height: 300px;
+	width: 300px;
+}
+dt{
+	font-family: sans-serif;
+	color: blue;
+}
+
+ol { 
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+li {
+    flex: 0 0 auto;
+}
