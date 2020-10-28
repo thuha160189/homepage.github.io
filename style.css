@@ -1,0 +1,26 @@
+selector {
+	property: value;
+
+}
+body{
+	background-color: white;
+}
+p {
+	font-family: sans-serif;
+	color: green;
+	
+
+}
+h2 {
+	font-family: sans-serif;
+	color: green;
+}
+.happy {
+	height: 300px;
+	width: 300px;
+}
+
+.sad{
+	height: 300px;
+	width: 300px;
+}
