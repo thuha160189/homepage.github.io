@@ -1,0 +1,65 @@
+/* css Zen Garden create by Ha Le */
+body{
+	background: peachpuff repeat-y center;
+	margin: 0;
+	padding: 0;
+	font: 15px georgia;
+	text-align: center;
+	width: 70%;
+}
+p{
+	margin-left: 15px;
+	color: lightseagreen;
+	margin: 15px;
+	text-align: left;
+}
+a{
+	color: blueviolet;
+}
+a:hover{
+	color: green;
+}
+h1{
+	
+	font: 2.5em georgia, serif;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+	color: black;
+}
+header{
+	background-image: url(images/bg1.jpg);
+	padding: 10px;
+	height: 150px;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+footer{
+	background: skyblue;
+	padding: 20px;
+}
+footer a:link{
+	margin-right: 50px;
+	color: palevioletred;
+}
+aside{
+	border: 10px dashed deepskyblue;
+	position: fixed;
+	left: 70%;
+	width: auto;
+	height: 100%;
+	background: tan;
+	padding: 5%;
+	top: 0px;
+	text-align: left;
+}
+h3{
+	font: italic normal 1.4em georgia, serif;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+	color: orangered;
+	line-height: 0.5em;
+	text-align: left;
+	margin: 10px;
+}
