@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Register Form</title>
+	<link href="style.css" type="text/css" rel="stylesheet"/>		
+</head>
+<body>
+<form>
+    <div class="registerform">
+        <div class="workshopreg">   
+            <label>Workshop Registraion </label>
+            <select name="More Action">
+            <option>Login</option>
+            <option>Exit</option>
+            <option selected> Register</option>
+            </select>
+        </div>
+        <div class="grid-container">
+         <div class="item1">
+            <div class="info1"><span>Register now while seats are avaiable!</span></div>
+
+            <div><label class="fname"> First Name <input type="text" name="firstname" required placeholder="firstname"/>  </label></div>
+      
+            <div><label> Last Name <input type="text" name="lastname" placeholder="lastname" required/>  </label></div>
+    
+            <div><label> Company/Institution <input type="text" name="company" placeholder="company" required /> </label></div>
+
+            <div><label> Address <textarea required></textarea></label></div>
+
+            <div><label> City <input type="text" name="city" placeholder="city"/>  </label></div>
+
+
+
+            <div><label>State/Province/Region </label>
+            <select name="-Select-">
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            </select></div>
+
+
+            <div><label>Country </label>
+            <select name="Select-">
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            </select></div>
+
+            <div><label> Email <input type="text" name="email" placeholder="email" required/>  </label></div>
+    
+            <div><label> Phone Number <input type="text" name="phone" placeholder="phone" required/>  </label></div>
+            </div>
+            <div class="item2">
+                <div><span class="category">Lunch</span></div>
+       
+                <div>
+                    <label class="label">Meal Preference</label>
+                    <select>
+                        <option>-Select-</option>
+                    </select>
+                </div>
+
+                <div>
+                    <span class="category">Payment Details</span>
+                </div>
+
+                <div>
+                    <label class="label">Payment Mode</label>
+                </div>
+                <div>
+                    <input id="ch1" type="checkbox"/><label for="ch1" class="labelck">Cash</label>
+                </div>
+                <div>
+                    <input id="ch2" type="checkbox"/><label for="ch2" class="labelck">Cheque</label>
+                </div>
+                <div>
+                    <input id="ch3" type="checkbox"/><label for="ch3" class="labelck">Demand Draf</label>
+                </div>
+
+                <div>
+                    <label class="label">Drawn On (Bank Name)<input type="text"/></label>
+                </div>
+        
+
+                <div><label class="label"> DD/Queue No <input type="text" name="queueno" required placeholder="DD/Queue No"/>  </label></div>
+      
+                <div><label> Drawn On (Bank Name) <input type="text" name="drawnon" placeholder="Bank Name"/>  </label></div>
+                <div><label> Payable At <input type="text" name="payable" placeholder="Payable At"/>  </label></div>
+
+            </div> 
+
+        </div>
+        
+        <div id="footer">
+
+            <input type="submit" /> 
+            <input type="reset" /> 
+            
+        </div>
+       
+    </div>
+</form>
+</body>
+</html>
