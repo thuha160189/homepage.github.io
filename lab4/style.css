@@ -28,6 +28,10 @@ body *{
 label{
 	font-weight: bold;	
 }
+.star::after{
+	content: "*";
+  	color: red;
+}
 
 span{
 	text-decoration: underline;
