@@ -2,7 +2,10 @@
 String.prototype.filter = function (s){
     return this.split(" ").filter(s1 => s1 !==s).join(" ");
 };
-console.log("This house is not nice!".filter("not"));
+String.prototype.filter1 = function (s){
+    return this.replaceAll(s, "");
+};
+console.log("This house is not nice!".filter1("not"));
 //Ex2
 Array.prototype.bubbleSort = function (){
     let is_sorted = false;
@@ -41,7 +44,20 @@ const  t1 = new Teacher("Computer Science");
 const  t2 = new Teacher("Web Application");
 console.log(t1.teach());
 console.log(t2.teach());
-
+//another way
+function Person1(myname){
+    this.name = myname;
+}
+function Teacher(name, subject){
+    Person1.call(this, name);
+    this.subject = subject;
+}
+Teacher.prototype = Object.create(Person1.prototype)
+Teacher.prototype.teach = function () {
+    return this.name + " is teaching " + this.subject;
+}
+const  wiliam = new Teacher("William", 'Wap');
+wiliam.teach();
 // via object create
 const  person = {
     name : 'Anna Smith',
@@ -51,11 +67,34 @@ const  person = {
         return this;
     }
 }
-let p1 = Object.create(person);
+const teacher = Object.create(person);
+teacher.setSubject = function(subject){
+    this.subject = subject;
+}
 
-p1.setName("Ha Le")
-console.log(p1.name);
+teacher.setName("Ha Le");
+teacher.setSubject('WAP');
+console.log(teacher.name);
+console.log(teacher);
 
+//using constructor
+function Person2(name){
+    return {
+        name: name
+    }
+}
+function Teacher1(name, subject){
+    let myname = Person2(name).name;
+    return {
+        name : myname,
+        subject: subject,
+        teach: function (){
+            console.log(this.name + "now is teaching "+ this.subject);
+        }
+    }
+}
+const  wiliam1 = Teacher1('William', 'WAP');
+wiliam1.teach();
 //ex4
 class Person4 {
     constructor(name, age) {
@@ -106,46 +145,41 @@ const dept = new Professor(p4.name, p4.age, p4.salute(), "Computer Science");
 console.log(dept.greeting());
 console.log(dept.salute);
 //use prototype object and function constructor to approad
-// const Person5 = {
-//     name : 'Ha Le',
-//     age : '31',
-//     }
-//     major : 'Computer Science',
-//     greeting : function(){
-//         return "My name is "+this.name + " and I am "+ this.age;
-//     },
-//     greeting : function(){
-//         return "My name is "+this.name + " and I am "+ this.age;
-//     },
-//     salute: function() {
-//         return "Good morning!, and in case I don't see you, good afternoon, good evening and good night";
-//     }
-// }
-// //create subclass -prototype object that has Person5 prototype obj
-// const Student1 = Object.create(Person5);
-// Student1.greeting = function (){
-//     return "Hey, My name is "+ this.name + " and i am studying " + this.major;
-// }
-function Person1(name, age){
+
+function Person5(name, age){
     this.name = name;
     this.age = age;
 }
-const p5 = new Person1("Ha Le", 31);
-function Student1(major){
-    this.name = p5.name;
-    this.age = p5.age;
+const p5 = new Person5("Ha Le", 31);
+
+Person5.prototype.greeting = function (){
+    return "Good day, my name is "+ this.name + " and I am " + this.age + "year old";
+}
+Person5.prototype.salute = function (){
+    return "Good morning!, and in case I don't see you, good afternoon, good evening and good night";
+}
+function Student1(name, age, major){
+    Person5.call(this, name, age);
     this.major = major;
 }
-function Professor1(department){
-    this.name = p5.name;
-    this.age = p5.age;
+Student1.prototype = Object.create(Person5.prototype);
+Student1.prototype.greeting1 = function (){
+    return "Good day, my name is "+ this.name + " and I am studying " + this.major;
+}
+
+function Professor1(name, age, department){
+    Person5.call(this, name, age);
     this.department = department;
 }
-Professor1.prototype.pro = function () {
+Professor1.prototype = Object.create(Person5.prototype);
+Professor1.prototype.greeting1 = function () {
     return "Good day, my name is "+ this.name + " and I am in department " + this.department;
 }
-const  pro1 = new Professor1("Computer Science");
-console.log(pro1.pro());
-console.log(pro1.pro());
+const stu1 = new Student1('Ha Le', 31, 'Computer Science');
+console.log(stu1.greeting1());
+console.log(stu1.salute());
+const  pro1 = new Professor1('Dustin', 37, 'CSD');
+console.log(pro1.greeting1());
+console.log(pro1.salute());
 
 
